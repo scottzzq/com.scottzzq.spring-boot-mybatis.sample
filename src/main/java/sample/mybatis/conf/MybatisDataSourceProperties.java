@@ -5,9 +5,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = MybatisDataSourceProperties.PREFIX)
+@ConfigurationProperties(prefix = "mybatis.datasource")
 public class MybatisDataSourceProperties implements BeanClassLoaderAware{
-	public static final String PREFIX = "mybatis.datasource";
 	private String url;
 	private String username;
 	private String password;
@@ -43,6 +42,5 @@ public class MybatisDataSourceProperties implements BeanClassLoaderAware{
 	@Override
 	public void setBeanClassLoader(ClassLoader classLoader) {
 		this.classLoader = classLoader;
-		
 	}
 }

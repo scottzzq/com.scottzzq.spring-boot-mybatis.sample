@@ -1,17 +1,15 @@
 package demo.sso.server.service;
 
+import java.util.Set;
+
+import org.springframework.stereotype.Component;
+
 import demo.sso.server.model.Credential;
 import demo.sso.server.model.DemoLoginUser;
 import demo.sso.server.model.LoginUser;
 
-/**
- * 示例性的鉴权处理器，当用户名和密码都为admin时授权通过，返回的也是一个示例性Credential实例
- * 
- * @author Administrator
- *
- */
+@Component(value="demoAuthenticationHandler")
 public class DemoAuthenticationHandler implements IAuthenticationHandler {
-
 	@Override
 	public LoginUser authenticate(Credential credential) throws Exception {
 		if ("admin".equals(credential.getParameter("name"))
@@ -20,9 +18,13 @@ public class DemoAuthenticationHandler implements IAuthenticationHandler {
 			user.setLoginName("admin");
 			return user;
 		} else {
-			credential.setError("error");
+			credential.setError("帐号或密码错误");
 			return null;
 		}
 	}
 
+	@Override
+	public Set<String> authedSystemIds(LoginUser loginUser) throws Exception {
+		return null;
+	}
 }

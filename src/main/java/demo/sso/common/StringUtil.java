@@ -4,14 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.UUID;
 
-/**
- * 字符串相关操作
- * 
- * @author Administrator
- *
- */
 public class StringUtil {
-
 	private StringUtil() {
 	}
 

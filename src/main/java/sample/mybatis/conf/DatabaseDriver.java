@@ -19,13 +19,6 @@ package sample.mybatis.conf;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
-/**
- * Enumeration of common database drivers.
- *
- * @author Phillip Webb
- * @author Maciej Walkowiak
- * @since 1.2.0
- */
 enum DatabaseDriver {
 
 	/**

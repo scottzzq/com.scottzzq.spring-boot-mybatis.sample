@@ -1,7 +1,5 @@
 package sample.mybatis.service;
 
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionTemplate;
 import sample.mybatis.domain.User;
 import sample.mybatis.mapper.UserMapper;
 

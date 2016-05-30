@@ -1,18 +1,13 @@
 package demo.sso.server.service;
 
+import java.util.Set;
+
 import demo.sso.server.model.Credential;
 import demo.sso.server.model.LoginUser;
 
-/**
- * 签权处理器
- * 
- * @author Administrator
- *
- */
 public interface IAuthenticationHandler {
-
 	/**
-	 * 签权
+	 * 鉴权
 	 * 
 	 * @param params
 	 *            页面传递过来的参数
@@ -24,4 +19,13 @@ public interface IAuthenticationHandler {
 	 * @return 授权成功返回Credentail, 否则返回null
 	 */
 	public LoginUser authenticate(Credential credential) throws Exception;
+
+	/**
+	 * 获取当前登录用户可用系统ID列表
+	 * 
+	 * @param loginUser
+	 * @return 返回null表示全部
+	 * @throws Exception
+	 */
+	public Set<String> authedSystemIds(LoginUser loginUser) throws Exception;
 }
