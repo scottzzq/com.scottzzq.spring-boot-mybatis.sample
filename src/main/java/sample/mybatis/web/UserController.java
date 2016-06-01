@@ -16,6 +16,7 @@ import sample.mybatis.service.UserService;
 public class UserController {
 	@Autowired
 	UserService userService;
+	
 	@Autowired
 	UserRepository userRepository;
 	
@@ -24,7 +25,6 @@ public class UserController {
 		List<User> list = new ArrayList<User>();
 		list.add(userService.readUserByUsername("lxy"));
 		list.addAll(userRepository.findAll());
-		System.out.println(userService.readUserCount());
 		return list;
 	}
 }

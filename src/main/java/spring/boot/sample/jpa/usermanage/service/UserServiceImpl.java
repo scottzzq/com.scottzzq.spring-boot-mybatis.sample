@@ -15,10 +15,10 @@ import spring.boot.sample.jpa.usermanage.exception.UserNotFound;
 import spring.boot.sample.jpa.usermanage.model.User;
 import spring.boot.sample.jpa.usermanage.repository.UserRepository;
 
-@Service("userService")
+@Service(value="userServiceImpl")
 public class UserServiceImpl implements UserService {
 	@Autowired
-	private UserRepository userRepository;
+	UserRepository userRepository;
 
 	@Override
 	public void addUser(User user) {
@@ -30,8 +30,8 @@ public class UserServiceImpl implements UserService {
 		User userUpdate = userRepository.findOne(user.getId());
 		if (userUpdate==null)
 			throw new UserNotFound();
-		if (user.getName()!=null)
-			userUpdate.setName(user.getName());
+		if (user.getUsername()!=null)
+			userUpdate.setUsername(user.getUsername());
 		if (user.getAddress()!=null)
 			userUpdate.setAddress(user.getAddress());
 		if (user.getPhone()!=null)

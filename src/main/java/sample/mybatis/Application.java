@@ -3,16 +3,11 @@ package sample.mybatis;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/**
- * 程序的入口
- *
- * @author 小翼
- * @version 1.0.0
- */
 @SpringBootApplication
+@EnableTransactionManagement
 public class Application implements CommandLineRunner {
-
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}

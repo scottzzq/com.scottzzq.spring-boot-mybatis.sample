@@ -3,6 +3,7 @@ package spring.boot.sample.jpa.usermanage.service;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Component;
 
 import spring.boot.sample.jpa.usermanage.exception.UserNotFound;
 import spring.boot.sample.jpa.usermanage.model.User;
@@ -18,10 +19,8 @@ public interface UserService {
 	public User getUser(int id);
 	//查询所有用户
 	public List<User> getUsers();
-		
 	//不分页带条件查询
 	public List<User> getUsersByConditionNoPage(String phone,String address);
-	
 	//带分页条件查询(需要得到用户列表并且得到分页信息)
 	public Page<User> getUsersByConditionWithPage(String phone,String address,Integer page,Integer pageSize);
 	//带分页条件查询(得到用户列表)
